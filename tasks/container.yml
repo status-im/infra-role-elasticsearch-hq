@@ -1,0 +1,34 @@
+---
+- name: Create config dir
+  file:
+    path: '{{ cont_vol }}/conf'
+    state: directory
+
+- name: Copy over logging config
+  copy:
+    src: logger.json
+    dest: '{{ cont_vol }}/conf/logger.json'
+
+- name: Start container
+  docker_container:
+    name: '{{ cont_name }}'
+    image: '{{ cont_image }}'
+    pull: true
+    restart_policy: always
+    state: '{{ cont_state }}'
+    recreate: '{{ cont_recreate }}'
+    restart: '{{ cont_restart }}'
+    entrypoint: python
+    command: |
+      /src/application.py
+      --port={{ cont_port }}
+      --host={{ cont_addr }}
+      {{ "--debug" if cont_debug else "" }}
+    links:
+      - 'elasticsearch:es'
+    env:
+      HQ_DEFAULT_URL: 'http://es:{{ es_listen_port }}'
+    ports:
+      - '0.0.0.0:{{ cont_port }}:{{ cont_port }}'
+    volumes:
+      - '{{ cont_vol }}/conf/logger.json:/src/elastichq/config/logger.json'

@@ -1,0 +1,19 @@
+---
+es_listen_port: 9200
+
+cont_state: started
+cont_recreate: false
+cont_restart: false
+
+cont_image: 'elastichq/elasticsearch-hq:release-v3.4.1'
+cont_name: 'elastic-hq'
+cont_port: 5000
+cont_addr: '0.0.0.0'
+cont_debug: false
+cont_vol: '/docker/{{ cont_name }}'
+
+# for oauth
+es_domain: ~
+es_hq_cookie_secret: ~
+es_hq_oauth_client_id: ~
+es_hq_oauth_client_secret: ~
