@@ -8,6 +8,7 @@ es_hq_domain: ~
 es_hq_cookie_secret: ~
 es_hq_oauth_client_id: ~
 es_hq_oauth_client_secret: ~
+es_hq_oauth_port: 8090
 
 cont_state: started
 cont_recreate: false
