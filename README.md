@@ -21,8 +21,5 @@ __WARNING:__ This role assumes the ES container runs on the same host.
 
 # Usage
 
-The UI can be accessed via GitHub OAuth at:
-https://es.status.im/
-
 For more details read:
 http://docs.elastichq.org/installation.html
