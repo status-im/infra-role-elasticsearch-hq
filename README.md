@@ -17,6 +17,8 @@ es_hq_oauth_client_id: 'some-kind-of-id'
 es_hq_oauth_client_secret: 'totally-secret-secret'
 ```
 
+__WARNING:__ This role assumes the ES container runs on the same host.
+
 # Usage
 
 The UI can be accessed via GitHub OAuth at:
