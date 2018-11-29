@@ -23,5 +23,5 @@
       --client-secret='{{ es_hq_oauth_client_secret | mandatory }}'
       --redirect-url='https://{{ es_hq_domain | mandatory }}/oauth2/callback'
       --http-address='0.0.0.0:{{ es_hq_oauth_port }}'
-      --upstream='http://upstream:{{ es_cont_port }}/'
+      --upstream='http://upstream:{{ es_hq_cont_port }}/'
       --request-logging=false
