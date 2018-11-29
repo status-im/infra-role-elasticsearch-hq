@@ -1,18 +1,18 @@
 ---
 - name: Create config dir
   file:
-    path: '{{ cont_vol }}/conf'
+    path: '{{ es_hq_cont_vol }}/conf'
     state: directory
 
 - name: Copy over logging config
   copy:
     src: logger.json
-    dest: '{{ cont_vol }}/conf/logger.json'
+    dest: '{{ es_hq_cont_vol }}/conf/logger.json'
 
 - name: Start container
   docker_container:
-    name: '{{ cont_name }}'
-    image: '{{ cont_image }}'
+    name: '{{ es_hq_cont_name }}'
+    image: '{{ es_hq_cont_image }}'
     pull: true
     restart_policy: always
     state: '{{ cont_state }}'
@@ -21,14 +21,14 @@
     entrypoint: python
     command: |
       /src/application.py
-      --port={{ cont_port }}
-      --host={{ cont_addr }}
-      {{ "--debug" if cont_debug else "" }}
+      --port={{ es_hq_cont_port }}
+      --host={{ es_hq_cont_addr }}
+      {{ "--debug" if es_hq_cont_debug else "" }}
     links:
       - '{{ es_cont_name | mandatory }}:es'
     env:
       HQ_DEFAULT_URL: 'http://es:{{ es_listen_port }}'
     ports:
-      - '0.0.0.0:{{ cont_port }}:{{ cont_port }}'
+      - '0.0.0.0:{{ es_hq_cont_port }}:{{ es_hq_cont_port }}'
     volumes:
-      - '{{ cont_vol }}/conf/logger.json:/src/elastichq/config/logger.json'
+      - '{{ es_hq_cont_vol }}/conf/logger.json:/src/elastichq/config/logger.json'

@@ -10,13 +10,14 @@ es_hq_oauth_client_id: ~
 es_hq_oauth_client_secret: ~
 es_hq_oauth_port: 8090
 
+es_hq_cont_image: 'elastichq/elasticsearch-hq:release-v3.4.1'
+es_hq_cont_name: 'elasticsearch-hq'
+es_hq_cont_port: 5000
+es_hq_cont_addr: '0.0.0.0'
+es_hq_cont_debug: false
+es_hq_cont_vol: '/docker/{{ es_hq_cont_name }}'
+
+# generic container settings
 cont_state: started
 cont_recreate: false
 cont_restart: false
-
-cont_image: 'elastichq/elasticsearch-hq:release-v3.4.1'
-cont_name: 'elastic-hq'
-cont_port: 5000
-cont_addr: '0.0.0.0'
-cont_debug: false
-cont_vol: '/docker/{{ cont_name }}'

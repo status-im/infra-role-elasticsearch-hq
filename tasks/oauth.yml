@@ -1,7 +1,7 @@
 ---
 - name: Start oauth2-proxy container
   docker_container:
-    name: '{{ cont_name }}-oauth'
+    name: '{{ es_hq_cont_name }}-oauth'
     image: '{{ oauth2_proxy_image }}'
     pull: true
     restart_policy: always
@@ -10,7 +10,7 @@
     restart: '{{ cont_restart }}'
     entrypoint: /bin/oauth2_proxy
     links:
-      - '{{ cont_name }}:upstream'
+      - '{{ es_hq_cont_name }}:upstream'
     ports:
       - '127.0.0.1:8090:8090'
     command: |
