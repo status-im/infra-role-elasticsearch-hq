@@ -7,8 +7,11 @@ It enables an easier overview of the health of the cluster.
 
 The only settings necessary to set are:
 ```yaml
-es_domain: 'es.example.com'
+# ES Cluster info
+es_cont_name: 'es-node'
 es_listen_port: 9200
+# OAuth for Dashboard
+es_hq_domain: 'es.example.com'
 es_hq_cookie_secret: 'change-me-please'
 es_hq_oauth_client_id: 'some-kind-of-id'
 es_hq_oauth_client_secret: 'totally-secret-secret'

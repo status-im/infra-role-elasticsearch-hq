@@ -25,7 +25,7 @@
       --host={{ cont_addr }}
       {{ "--debug" if cont_debug else "" }}
     links:
-      - 'elasticsearch:es'
+      - '{{ es_cont_name | mandatory }}:es'
     env:
       HQ_DEFAULT_URL: 'http://es:{{ es_listen_port }}'
     ports:

@@ -1,5 +1,13 @@
 ---
+# ES Cluster info
 es_listen_port: 9200
+es_cont_name: ~
+
+# for oauth
+es_hq_domain: ~
+es_hq_cookie_secret: ~
+es_hq_oauth_client_id: ~
+es_hq_oauth_client_secret: ~
 
 cont_state: started
 cont_recreate: false
@@ -11,9 +19,3 @@ cont_port: 5000
 cont_addr: '0.0.0.0'
 cont_debug: false
 cont_vol: '/docker/{{ cont_name }}'
-
-# for oauth
-es_domain: ~
-es_hq_cookie_secret: ~
-es_hq_oauth_client_id: ~
-es_hq_oauth_client_secret: ~
