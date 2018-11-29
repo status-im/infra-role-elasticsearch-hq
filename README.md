@@ -5,9 +5,10 @@ It enables an easier overview of the health of the cluster.
 
 # Configuration
 
-The only mandatory setting necessary to set is:
+The only settings necessary to set are:
 ```yaml
 es_domain: 'es.example.com'
+es_listen_port: 9200
 es_hq_cookie_secret: 'change-me-please'
 es_hq_oauth_client_id: 'some-kind-of-id'
 es_hq_oauth_client_secret: 'totally-secret-secret'
