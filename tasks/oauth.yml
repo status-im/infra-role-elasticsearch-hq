@@ -5,12 +5,11 @@
     image: '{{ oauth2_proxy_image }}'
     pull: true
     restart_policy: always
+    network_mode: host
     state: '{{ cont_state }}'
     recreate: '{{ cont_recreate }}'
     restart: '{{ cont_restart }}'
     entrypoint: /bin/oauth2_proxy
-    links:
-      - '{{ es_hq_cont_name }}:upstream'
     ports:
       - '127.0.0.1:8090:8090'
     command: |
@@ -23,5 +22,5 @@
       --client-secret='{{ es_hq_oauth_client_secret | mandatory }}'
       --redirect-url='https://{{ es_hq_domain | mandatory }}/oauth2/callback'
       --http-address='0.0.0.0:{{ es_hq_oauth_port }}'
-      --upstream='http://upstream:{{ es_hq_cont_port }}/'
+      --upstream='http://localhost:{{ es_hq_cont_port }}/'
       --request-logging=false
