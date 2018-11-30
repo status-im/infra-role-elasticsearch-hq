@@ -10,8 +10,8 @@ This role goes in tandem with [infra-role-elasticsearch](https://github.com/stat
 The only settings necessary to set are:
 ```yaml
 # ES Cluster info
-es_cont_name: 'es-node'
-es_listen_port: 9200
+es_lb_host: localhost
+es_lb_port: 9200
 # OAuth for Dashboard
 es_hq_domain: 'es.example.com'
 es_hq_cookie_secret: 'change-me-please'
