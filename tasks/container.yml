@@ -9,7 +9,7 @@
     src: logger.json
     dest: '{{ es_hq_cont_vol }}/conf/logger.json'
 
-- name: Start container
+- name: 'Start container: {{ es_hq_cont_name }}'
   docker_container:
     name: '{{ es_hq_cont_name }}'
     image: '{{ es_hq_cont_image }}'
