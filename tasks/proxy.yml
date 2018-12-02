@@ -8,7 +8,7 @@
     name: nginx
   vars:
     nginx_sites:
-      elasticsearch_ui:
+      elasticsearch_hq:
         - listen 80
         - listen 443 ssl
 
