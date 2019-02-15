@@ -1,7 +1,7 @@
 ---
 # ES Cluster info
 es_lb_port: 9200
-es_lb_host: localhost
+es_lb_cont_name: ~
 
 # for oauth
 es_hq_domain: ~
