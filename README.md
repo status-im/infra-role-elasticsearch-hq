@@ -10,8 +10,8 @@ This role goes in tandem with [infra-role-elasticsearch](https://github.com/stat
 The only settings necessary to set are:
 ```yaml
 # ES Cluster info
-es_lb_host: localhost
-es_lb_cont_name: es-lb-container
+es_hq_lb_host: localhost
+es_hq_lb_cont_name: es-lb-container
 # OAuth for Dashboard
 es_hq_domain: 'es.example.com'
 es_hq_cookie_secret: 'change-me-please'

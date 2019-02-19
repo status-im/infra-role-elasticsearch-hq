@@ -25,9 +25,9 @@
       --host={{ es_hq_cont_addr }}
       {{ "--debug" if es_hq_cont_debug else "" }}
     links:
-      - '{{ es_lb_cont_name | mandatory }}:es'
+      - '{{ es_hq_lb_cont_name | mandatory }}:es'
     env:
-      HQ_DEFAULT_URL: 'http://es:{{ es_lb_port }}'
+      HQ_DEFAULT_URL: 'http://es:{{ es_hq_lb_port }}'
     ports:
       - '0.0.0.0:{{ es_hq_cont_port }}:{{ es_hq_cont_port }}'
     volumes:
