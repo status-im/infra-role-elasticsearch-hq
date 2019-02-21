@@ -5,6 +5,7 @@
     state: directory
     owner: dockremap
     group: docker
+    recurse: true
 
 - name: Copy over logging config
   copy:
