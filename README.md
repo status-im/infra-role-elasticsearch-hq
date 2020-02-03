@@ -12,11 +12,6 @@ The only settings necessary to set are:
 # ES Cluster info
 es_hq_lb_host: localhost
 es_hq_lb_cont_name: es-lb-container
-# OAuth for Dashboard
-es_hq_domain: 'es.example.com'
-es_hq_cookie_secret: 'change-me-please'
-es_hq_oauth_client_id: 'some-kind-of-id'
-es_hq_oauth_client_secret: 'totally-secret-secret'
 ```
 
 __WARNING:__ This role assumes the ES container runs on the same host and can be linked to.

@@ -3,13 +3,6 @@
 es_hq_lb_port: 9200
 es_hq_lb_cont_name: ~
 
-# for oauth
-es_hq_domain: ~
-es_hq_cookie_secret: ~
-es_hq_oauth_client_id: ~
-es_hq_oauth_client_secret: ~
-es_hq_oauth_port: 8090
-
 es_hq_cont_image: 'elastichq/elasticsearch-hq:release-v3.5.12'
 es_hq_cont_name: 'elasticsearch-hq'
 es_hq_cont_port: 5000
