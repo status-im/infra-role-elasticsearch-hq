@@ -6,6 +6,7 @@
     owner: dockremap
     group: docker
     recurse: true
+    mode: 0750
 
 - name: Copy over logging config
   copy:
@@ -13,6 +14,7 @@
     dest: '{{ es_hq_cont_vol }}/conf/logger.json'
     owner: dockremap
     group: docker
+    mode: 0644
 
 - name: 'Start container: {{ es_hq_cont_name }}'
   docker_container:
