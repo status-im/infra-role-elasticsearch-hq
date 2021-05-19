@@ -8,7 +8,7 @@
         tags: ['logging']
         # we advertise the port with basic auth
         port: '{{ es_hq_cont_port }}'
-        address: '{{ ansible_local.tinc.vpn_ip }}'
+        address: '{{ ansible_local.wireguard.vpn_ip }}'
         checks:
           - id: '{{ es_hq_cont_name }}-health'
             name: ElasticHQ Healthcheck
