@@ -1,3 +1,7 @@
+# DEPRECATION WARNING
+
+This repository has been deprecated because of [known compatibility issues](https://github.com/status-im/infra-role-elasticsearch/issues/2).
+
 # Description
 
 This role configures an [ElasticHQ](https://github.com/ElasticHQ/elasticsearch-HQ) which is a Web UI for [ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.3/index.html).
